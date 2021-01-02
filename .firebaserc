@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "pwa-chat-30ede": {
+      "hosting": {
+        "pwa-app": [
+          "pwa-chat-30ede"
+        ]
+      }
+    }
+  }
+}

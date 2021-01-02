@@ -9,6 +9,9 @@ import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './common/navbar/navbar.component';
 import { FormsModule } from '@angular/forms';
 import { CommentDatePipe } from './pipe/comment-date.pipe';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { CommentDatePipe } from './pipe/comment-date.pipe';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
