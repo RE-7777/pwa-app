@@ -35,7 +35,12 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "allowedCommonJsDependencies": [
+              "firebase",
+              "@firebase/auth",
+              "@firebase/database"
+            ]
           },
           "configurations": {
             "production": {
@@ -136,7 +141,10 @@
           "options": {
             "outputPath": "dist/pwa-app/server",
             "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
+            "tsConfig": "tsconfig.server.json",
+            "externalDependencies": [
+              "@firebase/firestore"
+            ]
           },
           "configurations": {
             "production": {
@@ -164,6 +172,12 @@
               "browserTarget": "pwa-app:build:production",
               "serverTarget": "pwa-app:server:production"
             }
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "ssr": true
           }
         }
       }
