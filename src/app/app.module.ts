@@ -7,27 +7,24 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './common/navbar/navbar.component';
-import { FormsModule } from '@angular/forms';
-import { CommentDatePipe } from './pipe/comment-date.pipe';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFireAuthModule } from '@angular/fire/auth';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+
+import { ChatComponent } from './chat/chat.component';
+import { SharedModule } from './shared/shared.module';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    CommentDatePipe
+    ChatComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
     RouterModule,
-    FormsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule,
-    AngularFireDatabaseModule
+    SharedModule,
+    CoreModule    
   ],
   providers: [],
   bootstrap: [AppComponent]
