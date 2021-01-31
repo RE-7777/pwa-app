@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "pwa-app",
-      "public": "dist/pwa-app/dist/pwa-app/browser",
+      "public": "dist/pwa-app/browser",
       "ignore": [
         "**/.*"
       ],
@@ -20,12 +20,9 @@
       "rewrites": [
         {
           "source": "**",
-          "function": "ssr"
+          "function": "/index.html"
         }
       ]
     }
-  ],
-  "functions": {
-    "source": "dist/pwa-app"
-  }
+  ]
 }

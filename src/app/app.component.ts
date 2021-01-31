@@ -5,8 +5,12 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  template: `<app-chat></app-chat>`
-  ,
+  template: 
+  `<app-header></app-header>
+   <div class ="page">
+      <router-outlet></router-outlet>
+   </div>
+   `,
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
